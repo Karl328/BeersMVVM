@@ -2,7 +2,7 @@
 
 # Примерный интерфейс
 
-<img src="https://user-images.githubusercontent.com/102364472/185934925-47d7ca8a-8a2b-494a-90ef-d4fca04b4c07.png" width="200" /> <img src="https://user-images.githubusercontent.com/102364472/185934876-a12d6d22-19c6-4fc0-8512-e9eb88894af7.png" width="200" />
+<img src="https://user-images.githubusercontent.com/102364472/188120783-12562d4c-9dfa-41a5-b121-06fdac43106f.png" width="200" /> <img src="https://user-images.githubusercontent.com/102364472/188120760-5fc69323-75a6-4492-97bd-65d9ca410c95.png" width="200" />
 
 # Installation
 У вас должны быть установлены SPM https://github.com/onevcat/Kingfisher
