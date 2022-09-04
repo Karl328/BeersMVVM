@@ -9,8 +9,8 @@ import UIKit
 import Kingfisher
 
 final class  BeersController: UIViewController {
+    
     private let mainTableView = UITableView()
-   
     private var viewModel: BeersListViewModelProtocol! {
         didSet {
             viewModel.fetchBeers {
@@ -19,15 +19,12 @@ final class  BeersController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         viewModel = BeerListViewModel()
         setupNavControl()
         createTableView()
-
-
     }
     
     private func setupNavControl () {
@@ -46,7 +43,6 @@ final class  BeersController: UIViewController {
         mainTableView.showsVerticalScrollIndicator = false
         mainTableView.separatorStyle = .none
         view.addSubview(mainTableView)
-        
     }
 
    

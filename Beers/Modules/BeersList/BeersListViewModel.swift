@@ -18,8 +18,8 @@ protocol BeersListViewModelProtocol: AnyObject {
     func viewModelSelectedRow (at indexPath: IndexPath) -> DetailsViewModelProtocol
 }
 
-class BeerListViewModel: BeersListViewModelProtocol {
-   
+final class BeerListViewModel: BeersListViewModelProtocol {
+    
     var beersArray: [BeerElement] = []
     
     var filtredBeers: [BeerElement] = []
@@ -34,7 +34,6 @@ class BeerListViewModel: BeersListViewModelProtocol {
     func filteredBeers(completion: @escaping () -> Void) {
         
     }
-    
     
     func numberOfRows() -> Int {
         beersArray.count

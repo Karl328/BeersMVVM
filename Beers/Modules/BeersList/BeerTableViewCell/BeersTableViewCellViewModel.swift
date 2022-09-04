@@ -17,7 +17,7 @@ protocol BeersTableViewCellViewModelProtocol {
     
 }
 
-class BeersTableViewCellViewModel: BeersTableViewCellViewModelProtocol {
+final class BeersTableViewCellViewModel: BeersTableViewCellViewModelProtocol {
     var beerName: String {
         beerElement.name
     }

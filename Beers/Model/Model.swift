@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: - BeerElement
-struct BeerElement: Codable {
+struct BeerElement: Decodable {
     let id: Int
     let name, tagline, firstBrewed, beerDescription: String
     let imageURL: String
@@ -48,46 +48,46 @@ struct BeerElement: Codable {
 }
 
 // MARK: - BoilVolume
-struct BoilVolume: Codable {
+struct BoilVolume: Decodable {
     let value: Double
     let unit: Unit
 }
 
-enum Unit: String, Codable {
+enum Unit: String, Decodable {
     case celsius = "celsius"
     case grams = "grams"
     case kilograms = "kilograms"
     case litres = "litres"
 }
 
-enum ContributedBy: String, Codable {
+enum ContributedBy: String, Decodable {
     case aliSkinnerAliSkinner = "Ali Skinner <AliSkinner>"
     case samMasonSamjbmason = "Sam Mason <samjbmason>"
 }
 
 // MARK: - Ingredients
-struct Ingredients: Codable {
+struct Ingredients: Decodable {
     let malt: [Malt]
     let hops: [Hop]
     let yeast: String
 }
 
 // MARK: - Hop
-struct Hop: Codable {
+struct Hop: Decodable {
     let name: String
     let amount: BoilVolume
     let add: Add
     let attribute: Attribute
 }
 
-enum Add: String, Codable {
+enum Add: String, Decodable {
     case dryHop = "dry hop"
     case end = "end"
     case middle = "middle"
     case start = "start"
 }
 
-enum Attribute: String, Codable {
+enum Attribute: String, Decodable {
     case aroma = "aroma"
     case attributeFlavour = "Flavour"
     case bitter = "bitter"
@@ -95,13 +95,13 @@ enum Attribute: String, Codable {
 }
 
 // MARK: - Malt
-struct Malt: Codable {
+struct Malt: Decodable {
     let name: String
     let amount: BoilVolume
 }
 
 // MARK: - Method
-struct Method: Codable {
+struct Method: Decodable {
     let mashTemp: [MashTemp]
     let fermentation: Fermentation
     let twist: String?
@@ -113,12 +113,12 @@ struct Method: Codable {
 }
 
 // MARK: - Fermentation
-struct Fermentation: Codable {
+struct Fermentation: Decodable {
     let temp: BoilVolume
 }
 
 // MARK: - MashTemp
-struct MashTemp: Codable {
+struct MashTemp: Decodable {
     let temp: BoilVolume
     let duration: Int?
 }

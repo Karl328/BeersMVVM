@@ -14,7 +14,7 @@ protocol DetailsViewModelProtocol: AnyObject {
     init(beerElement: BeerElement)
 }
 
-class DetailsViewModel: DetailsViewModelProtocol {
+final class DetailsViewModel: DetailsViewModelProtocol {
     var imageURL: String {
         beerElement.imageURL
     }
