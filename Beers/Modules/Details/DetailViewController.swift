@@ -13,7 +13,8 @@ final class DetailController: UIViewController {
     private let imageBeer = UIImageView()
     private let beerNameLabel = UILabel()
     private let closeButton = UIButton()
-    private let descriptionLabel = UILabel()
+    //private let descriptionLabel = UILabel()
+    private let descriptionTextView = UITextView()
     
     public var viewModel: DetailsViewModelProtocol! 
     
@@ -26,24 +27,18 @@ final class DetailController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        imageBeer.isHidden = false
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .black
         imageBeerConfig()
         labelsConfig()
         closeButtonConfig()
         setupUI()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .black
-     
-    }
-    
     private func setupUI() {
         beerNameLabel.text = viewModel.beerName
-        descriptionLabel.text = viewModel.beerDescription
+        descriptionTextView.text = viewModel.beerDescription
         imageBeer.kf.setImage(with: URL(string: viewModel.imageURL))
     }
     
@@ -64,22 +59,32 @@ final class DetailController: UIViewController {
     
     private func imageBeerConfig() {
         imageBeer.kf.indicatorType = .activity
-        imageBeer.frame = CGRect(x: view.bounds.width / 2 - 50, y: 150, width: 100, height: 300)
         view.addSubview(imageBeer)
+        view.addSubview(beerNameLabel)
+        imageBeer.translatesAutoresizingMaskIntoConstraints = false
+        imageBeer.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageBeer.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        imageBeer.topAnchor.constraint(equalTo: beerNameLabel.bottomAnchor, constant: 50).isActive = true
+        imageBeer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+      
+        
     }
     private func labelsConfig () {
         beerNameLabel.textColor = .white
         beerNameLabel.font = .boldSystemFont(ofSize: 30)
         beerNameLabel.textAlignment = .center
         beerNameLabel.adjustsFontSizeToFitWidth = true
-        beerNameLabel.frame = CGRect(x: view.bounds.width / 2 - 150, y: 50, width: 300, height: 100)
-        view.addSubview(beerNameLabel)
+        beerNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        beerNameLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        beerNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        beerNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         
-        descriptionLabel.textColor = .white
-        descriptionLabel.textAlignment = .left
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.frame = CGRect(x: 5, y: 450, width: view.bounds.width, height: 200)
-        view.addSubview(descriptionLabel)
+        descriptionTextView.textColor = .white
+        descriptionTextView.textAlignment = .left
+        descriptionTextView.backgroundColor = .black
+        descriptionTextView.font = .systemFont(ofSize: 20)
+        descriptionTextView.frame = CGRect(x: 5, y: 450, width: view.bounds.width, height: 200)
+        view.addSubview(descriptionTextView)
     }
     
 
