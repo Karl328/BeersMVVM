@@ -82,8 +82,9 @@ final class DetailController: UIViewController {
         descriptionTextView.textColor = .white
         descriptionTextView.textAlignment = .left
         descriptionTextView.backgroundColor = .black
+        descriptionTextView.isEditable = false
         descriptionTextView.font = .systemFont(ofSize: 20)
-        descriptionTextView.frame = CGRect(x: 5, y: 450, width: view.bounds.width, height: 200)
+        descriptionTextView.frame = CGRect(x: 5, y: 400, width: view.bounds.width, height: UIScreen.main.bounds.height / 3)
         view.addSubview(descriptionTextView)
     }
     
