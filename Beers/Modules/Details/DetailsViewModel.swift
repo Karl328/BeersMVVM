@@ -17,6 +17,7 @@ protocol DetailsViewModelProtocol: AnyObject {
 final class DetailsViewModel: DetailsViewModelProtocol {
     var imageURL: String {
         beerElement.imageURL
+        
     }
     
     var beerDescription: String {

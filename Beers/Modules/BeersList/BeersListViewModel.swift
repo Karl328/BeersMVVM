@@ -29,6 +29,8 @@ final class BeerListViewModel: BeersListViewModelProtocol {
             self.beersArray = beersElement
             completion()
         }
+        
+        
     }
     
     func filteredBeers(completion: @escaping () -> Void) {

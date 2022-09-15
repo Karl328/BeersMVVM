@@ -13,7 +13,6 @@ final class DetailController: UIViewController {
     private let imageBeer = UIImageView()
     private let beerNameLabel = UILabel()
     private let closeButton = UIButton()
-    //private let descriptionLabel = UILabel()
     private let descriptionTextView = UITextView()
     
     public var viewModel: DetailsViewModelProtocol! 
